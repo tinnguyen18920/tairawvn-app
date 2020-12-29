@@ -80,7 +80,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
 
     #TODO: ADD IS_RUNNING, ADD disable others button
     def merge_clicked_files(self):
-        image_files = QFileDialog.getOpenFileNames(self, "Chọn hình ảnh để ghép", filter="Common Images (*.jpg *.jpeg *.png);; Web Image(*.webp)")
+        image_files = QFileDialog.getOpenFileNames(self, "Chọn hình ảnh để ghép", filter="Common Images (*.jpg *.jpeg *.png, *.webp);")
         # print(image_files)?
         if image_files[0]:
             self.merge_thread = MergeThread(image_files[0])
@@ -221,6 +221,7 @@ class DownloadThread(QThread):
                 DOWNLOAD_RESULT = {"status" : "error", "msg" : "%s đã thay đổi cách tải raw. Vui lòng liên hệ Admin để đề nghị cập nhật. Erro_Code: 173" % self.netloc_input}
                 return False
 
+            # print(data)
             data_status = data.get("status")
             if data_status == "error":
                 DOWNLOAD_RESULT = data

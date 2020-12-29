@@ -61,6 +61,9 @@ class TairawRequests:
         return json_response
 
 
+    def update_header(self, header):
+        self._session.headers.update(header)
+        
 class Downloader:
     def __init__(self, platform, referer=None):
         self._session = TairawSession(platform)
