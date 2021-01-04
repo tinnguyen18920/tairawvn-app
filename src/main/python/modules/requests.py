@@ -40,7 +40,7 @@ class TairawRequests:
             soup = BeautifulSoup(response.text, "lxml")
         except:
             soup = False
-
+            
         return soup
 
 

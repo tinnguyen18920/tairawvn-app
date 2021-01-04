@@ -1,6 +1,6 @@
 __pycache__
-target*
-env
-*.pyc
 *.log
 dev
+dev.*
+*.html
+target*

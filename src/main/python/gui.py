@@ -62,7 +62,9 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         Add data to GUI
         """
         # print(dir(self.list_supported))
-        self.list_supported.addItems(MAPPING.keys())
+        list_sites = list(MAPPING.keys())
+        list_sites.sort()
+        self.list_supported.addItems(list_sites)
 
         
         # self.list_supported.addItems([str(i) for i in range(2,2000)])
